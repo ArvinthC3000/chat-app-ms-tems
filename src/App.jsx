@@ -6,6 +6,8 @@ import Home from './components/home/Home';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import About from './components/about/About';
 import { useEffect } from 'react';
+import { Provider } from 'react-redux';
+import store from './store';
 
 function App() {
   useEffect(() => {
@@ -15,12 +17,14 @@ function App() {
 
   return (
     <>
-      <Router>
-        <Switch>
-          <Route path='/' exact component={Home} />
-          <Route path='/about' exact component={About} />
-        </Switch>
-      </Router>
+      <Provider store={store}>
+        <Router>
+          <Switch>
+            <Route path='/' exact component={Home} />
+            <Route path='/about' exact component={About} />
+          </Switch>
+        </Router>
+      </Provider>
     </>
   );
 }
