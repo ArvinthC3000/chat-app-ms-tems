@@ -1,10 +1,11 @@
 import Header from '../shared/Header';
+import Movies from './Movies';
 
 const Home = () => {
   return (
     <div>
       <Header />
-      <div>Movies Container</div>
+      <Movies />
     </div>
   );
 };
