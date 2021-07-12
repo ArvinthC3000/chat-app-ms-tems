@@ -1,6 +1,9 @@
-const SearchBar = () => {
+import { connect } from 'react-redux';
+import { getMovies } from '../../actions/movieActions';
+
+const SearchBar = ({ getMovies }) => {
   const searchMovies = e => {
-    console.log(e.target.value);
+    getMovies(e.target.value);
   };
   return (
     <div className='searchBar'>
@@ -15,4 +18,4 @@ const SearchBar = () => {
   );
 };
 
-export default SearchBar;
+export default connect(null, { getMovies })(SearchBar);

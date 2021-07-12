@@ -2,7 +2,6 @@ import { connect } from 'react-redux';
 
 const MovieModal = ({ movieProps }) => {
   const { modalData: movie } = movieProps;
-  console.log(movie);
 
   return (
     <div id='movie-modal' className='modal grey darken-4' style={modalStyle}>
