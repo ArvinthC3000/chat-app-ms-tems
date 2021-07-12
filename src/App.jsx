@@ -8,6 +8,7 @@ import About from './components/about/About';
 import { useEffect } from 'react';
 import { Provider } from 'react-redux';
 import store from './store';
+import MovieModal from './components/modals/MovieModal';
 
 function App() {
   useEffect(() => {
@@ -18,6 +19,7 @@ function App() {
   return (
     <>
       <Provider store={store}>
+        <MovieModal />
         <Router>
           <Switch>
             <Route path='/' exact component={Home} />

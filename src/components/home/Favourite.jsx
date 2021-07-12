@@ -11,8 +11,6 @@ const Favourite = ({ getFavMovies, movieProps }) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  console.log(favorites);
-
   return (
     <>
       <div className='header'>Favourites</div>
