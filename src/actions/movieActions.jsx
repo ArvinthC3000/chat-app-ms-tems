@@ -51,3 +51,10 @@ export const getDefaultMovies = () => async dispatch => {
     console.log(err);
   }
 };
+
+export const setModalID = movie => dispatch => {
+  dispatch({
+    type: SET_MODAL_DATA,
+    payload: movie,
+  });
+};

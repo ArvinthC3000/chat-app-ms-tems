@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { getFavMovies } from '../../actions/movieActions';
+import FavouritesList from './FavouritesList';
 
 const Favourite = ({ getFavMovies, movieProps }) => {
   const { favorites } = movieProps;
@@ -10,14 +11,15 @@ const Favourite = ({ getFavMovies, movieProps }) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  console.log(favorites);
+
   return (
     <>
       <div className='header'>Favourites</div>
       <div className='movieContainer'>
         {favorites !== null && favorites.length ? (
           favorites.map(movie => (
-            // <FavouritesList key={movie.id} movie={movie} />
-            <div></div>
+            <FavouritesList key={movie.id} movie={movie} />
           ))
         ) : (
           <div className='header'>No favourite movies yet</div>
