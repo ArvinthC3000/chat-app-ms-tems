@@ -1,4 +1,5 @@
 import Header from '../shared/Header';
+import Favourite from './Favourite';
 import Movies from './Movies';
 
 const Home = () => {
@@ -6,6 +7,7 @@ const Home = () => {
     <div>
       <Header />
       <Movies />
+      <Favourite />
     </div>
   );
 };

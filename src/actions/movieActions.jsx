@@ -29,6 +29,13 @@ export const removeFavMovie = id => dispatch => {
   });
 };
 
+// Get favorite movies from local storage
+export const getFavMovies = () => dispatch => {
+  dispatch({
+    type: GET_FAVORITES,
+  });
+};
+
 // Get Default movies
 export const getDefaultMovies = () => async dispatch => {
   try {
