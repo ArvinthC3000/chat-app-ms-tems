@@ -60,7 +60,7 @@ export const setModalID = movie => dispatch => {
 };
 
 // Get movies based on search string
-export const getMovies = async string => async dispatch => {
+export const getMovies = string => async dispatch => {
   if (!string.trim().length) {
     setSearchString(null);
     removeMovies();
