@@ -14,15 +14,19 @@ const api_key = `04c35731a5ee918f014970082a0088b1`; // TMDB
 const tmdb_url = `https://api.themoviedb.org/3`; // TMDB
 
 // Add new fav movies
-export const addFavMovie = id => async dispatch => {
-  try {
-    dispatch({
-      type: ADD_FAVORITES,
-      payload: id,
-    });
-  } catch (err) {
-    console.log(err);
-  }
+export const addFavMovie = id => dispatch => {
+  dispatch({
+    type: ADD_FAVORITES,
+    payload: id,
+  });
+};
+
+// Remove from fav movies
+export const removeFavMovie = id => dispatch => {
+  dispatch({
+    type: REMOVE_FAVORITES,
+    payload: id,
+  });
 };
 
 // Get Default movies

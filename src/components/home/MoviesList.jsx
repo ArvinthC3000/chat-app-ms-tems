@@ -1,7 +1,8 @@
 import { FaHeart } from 'react-icons/fa';
 import { connect } from 'react-redux';
-import { addFavMovie } from '../../actions/movieActions';
+import { addFavMovie, removeFavMovie } from '../../actions/movieActions';
 import PropTypes from 'prop-types';
+
 const MoviesList = props => {
   const { addFavMovie, removeFavMovie, setModalID, movie, movieProps } = props;
   const { favorites } = movieProps;
@@ -42,10 +43,13 @@ const MoviesList = props => {
 MoviesList.propTypes = {
   movieProps: PropTypes.object.isRequired,
   addFavMovie: PropTypes.func.isRequired,
+  removeFavMovie: PropTypes.func.isRequired,
 };
 
 const mapStatetoProps = state => ({
   movieProps: state.movie,
 });
 
-export default connect(mapStatetoProps, { addFavMovie })(MoviesList);
+export default connect(mapStatetoProps, { addFavMovie, removeFavMovie })(
+  MoviesList
+);
