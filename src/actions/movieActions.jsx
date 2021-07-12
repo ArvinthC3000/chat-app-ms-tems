@@ -58,3 +58,37 @@ export const setModalID = movie => dispatch => {
     payload: movie,
   });
 };
+
+// Get movies based on search string
+export const getMovies = async string => async dispatch => {
+  if (!string.trim().length) {
+    setSearchString(null);
+    removeMovies();
+    return;
+  }
+  setSearchString(string);
+  const response = await axios.get(`${tmdb_url}/search/movie`, {
+    params: { sort_by: 'created_at.asc', query: string, api_key },
+  });
+
+  const { results } = response.data;
+
+  dispatch({
+    type: GET_MOVIES,
+    payload: results,
+  });
+};
+
+export const setSearchString = string => dispatch => {
+  dispatch({
+    type: GET_SEARCH_STRING,
+    payload: string,
+  });
+};
+
+// Rmove movies from state
+export const removeMovies = () => dispatch => {
+  dispatch({
+    type: REMOVE_MOVIES,
+  });
+};
